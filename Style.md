@@ -47,6 +47,7 @@ Use the following style conventions for coding style and formatting. Extensive p
 ## CSS/SASS
 
 - Double quotes for any values requiring quotes
+- Avoid using color names if possible, using hex codes instead, due to differing cross browser implementations of each color. Possible exceptions include white, black, or red, but avoid using these also if possible.
 
 ## Javascript
 
@@ -67,7 +68,3 @@ Use the following style conventions for coding style and formatting. Extensive p
     ```
 
 ## C++
-
-## PHP
-
-## Shell/Bash
