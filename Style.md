@@ -37,6 +37,14 @@ Use the following style conventions for coding style and formatting. Extensive p
     "It's an apostrophe"
     'She said, "Hi!"'
     ```
+- Use string interpolation instead of string concatenation. It's cleaner, checks for type, and is supposed to be faster.
+
+    ```
+    # good
+    s = 'Hello %s! You are user #%d' % (name, id)
+    # bad
+    s = 'Hello ' + name + '! You are user #' + id
+    ```
 
 ## HTML
 
