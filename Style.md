@@ -50,6 +50,7 @@ Use the following style conventions for coding style and formatting. Extensive p
 
 - Use double quotes for attribute values, `<a href="http://google.com">`
 - We tend to use classes over ids, even if it's only to identify one element on the page. Possibly aesthetic so that CSS and Javascript can use `.my-class` instead of `#my-id`.
+- Name classes with hyphens. `class="my-class"` instead of `class="my_class"` or `class="myClass"`
 - Use `<button>` over `<input type="button">`
 
 ## CSS/SASS
