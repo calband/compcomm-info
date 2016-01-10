@@ -68,8 +68,8 @@ Use the following style conventions for coding style and formatting. Extensive p
     /**
      * A short description of the function
      * 
-     * @param (type) x -- description of this parameter
-     * @return (type) description of the return value
+     * @param {type} x -- description of this parameter
+     * @return {type} description of the return value
      */
     var myFunction = function(x) {
         // stuff
