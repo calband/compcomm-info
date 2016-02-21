@@ -129,9 +129,20 @@ Don't be scared, all you have to do is take a look at each file that git lists a
     
 The HEAD section represents the changes you've made; the section below represents the changes someone else made on the other branch. First, erase the =,<,> signs. Then change the file so that everything is _how it should be_ and commit everything again. Note that _how it should be_ does not just mean that you should erase everything you or the other person changed - instead, you should look at what the affected code does and make sure you know that you're not undoing someone else's work before you're done.
 
+Sometimes, you'll see a vim console on a successful merge. See the Vim section for more details.
+
 If you need to know who committed some lines in order to ask them about it, check out [git blame](http://alblue.bandlem.com/2011/07/git-tip-of-week-assigning-blame.html).
 
 There are also programs that allow you to merge easily using a pretty interface. More about these [here](http://www.gitguys.com/topics/merging-with-a-gui/).
+
+### Vim
+
+Sometimes, git uses vim (or emacs sometimes) for text input. There are tons of guides [online](https://blog.interlinked.org/tutorials/vim_tutorial.html), but the main things I do on vim can be done with the following commands:
+
+- `:q` quits the screen (saves the commit if something's written)
+- `:wq` saves and quits the screen
+- `i` allows you to edit the page
+- `<Esc>` gets you out of editing the page
 
 ## Github Tutorial
 
