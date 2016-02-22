@@ -45,6 +45,21 @@ Use the following style conventions for coding style and formatting. Extensive p
     # bad
     s = 'Hello ' + name + '! You are user #' + id
     ```
+- Add commas for the last item in a list to allow easy additions to the list in future revisions.
+
+    ```
+    # good
+    l = [
+        'hello',
+        'world',
+    ]
+    
+    # bad
+    l = [
+        'hello',
+        'world'
+    ]
+    ```
 
 ## HTML
 
