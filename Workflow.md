@@ -15,7 +15,7 @@ The issues page on Github lists all of the things that need to get done for a gi
 
 In order to maintain the `master` branch as a working and complete implementation, branch off to a new branch to make changes and commit freely without worrying about breaking the master code. The new branch name should be of the format `yourname__your_branch_name` or something similar. That is, your name (first or last, whichever uniquely defines you) followed by two underscores, then your branch name (underscore separated, hyphen separated, or camel case are all fine).
 
-Before making a new branch, first check out `master and pull from Github to make sure you're editing from an up to date version of the code.
+Before making a new branch, first check out `master` and pull from Github to make sure you're editing from an up to date version of the code.
 
 ```
 git checkout master
