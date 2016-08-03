@@ -68,10 +68,11 @@ Use the following style conventions for coding style and formatting. Extensive p
 - Name classes with hyphens. `class="my-class"` instead of `class="my_class"` or `class="myClass"`
 - Use `<button>` over `<input type="button">`
 
-## CSS/SASS
+## CSS/Sass
 
 - Double quotes for any values requiring quotes
-- Avoid using color names if possible, using hex codes instead, due to differing cross browser implementations of each color. Possible exceptions include white, black, or red, but avoid using these also if possible.
+- Avoid using color names if possible, using hex codes instead, due to differing cross browser implementations of each color. Possible exceptions include white, black, or red, but avoid using these also if possible. Even better, define Sass variables for hexes and use those
+- Use hyphens for Sass variables and mixins
 
 ## Javascript
 
