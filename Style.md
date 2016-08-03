@@ -14,7 +14,7 @@ Use the following style conventions for coding style and formatting. Extensive p
 - Use `snake_case` for functions and variables, `CapitalCamelCase` for classes
 - Use the following format for documentation:
 
-    ```
+    ```python
     def some_function(param1, param2):
         """
         Have some overall description of what this function does here, including
@@ -32,22 +32,23 @@ Use the following style conventions for coding style and formatting. Extensive p
 - Avoid using wildcard imports (`from module import *`) because they can be ambiguous (if there are wildcard imports, then it's sometimes not clear where exactly a function that's imported as part of the `*` is defined, which means you can't look it up).
 - Use single quotes for strings instead of double quotes, unless you want single quotes inside the string. This is purely arbitrary, and simply for consistency.
 
-    ```
+    ```python
     'hi'
     "It's an apostrophe"
     'She said, "Hi!"'
     ```
 - Use string interpolation instead of string concatenation. It's cleaner, checks for type, and is supposed to be faster.
 
-    ```
+    ```python
     # good
     s = 'Hello %s! You are user #%d' % (name, id)
+    
     # bad
     s = 'Hello ' + name + '! You are user #' + id
     ```
 - Add commas for the last item in a list to allow easy additions to the list in future revisions.
 
-    ```
+    ```python
     # good
     l = [
         'hello',
@@ -80,7 +81,7 @@ Use the following style conventions for coding style and formatting. Extensive p
 - Use `camelCase` for variables and function names, except use `UNDERSCORE_CAPS` for variables that should be considered constants
 - Use the following format to declare and document a function:
 
-    ```
+    ```javascript
     /**
      * A short description of the function
      * 
@@ -91,6 +92,8 @@ Use the following style conventions for coding style and formatting. Extensive p
         // stuff
     };
     ```
+    
+    We declare variables and assign an anonymous function to them to avoid hoisting and other tricky stuff. More details [here](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/).
 
 ## C++
 
@@ -105,7 +108,7 @@ Please pay particular attention to the naming conventions; indentation and other
 If a method, when applied on an object, makes no changes to that object, then it should be declared as `const`.
 
 Example:
-```
+```cpp
 class IntWrapper {
 public:
     IntWrapper(int x): m_x(x) {}; // Constructor
@@ -123,7 +126,7 @@ private:
 If a mutable object is passed as an argument to a function/method that does not make any changes to it, then the parameter should be declared as `const`.
 
 Example:
-```
+```cpp
 void funcA(const int& readonly) {
     print(readonly); // Note that we do not change the value of readonly, so we declare it const
 }
@@ -142,7 +145,7 @@ Avoid raw pointer types (e.g. `int*`); instead, use smart pointers. There are th
 
 Unique pointers will delete the objects which they point to when they are deleted or go out of scope. Consider the following function, which uses a raw pointer instead of a unique pointer:
 
-```
+```cpp
 void func() {
     SomeClass* something = new SomeClass();
     doSomething(something);
@@ -153,7 +156,7 @@ void func() {
 
 Note that if we forget to explicitly call `delete`, we will create a memory leak. Also note another issue: suppose that `doSomething(something)` aborts after throwing an exception; in that case, `func()` will not finish executing, and `delete something` will never be executed, causing a memory leak. To avoid both of these problems, we can rewrite the function with a unique pointer:
 
-```
+```cpp
 void func() {
     std::unique_ptr<SomeClass> something(new SomeClass()); // Note that `std::unique_ptr` is a template, so you must specify the type of pointer in the angle brackets (<SomeClass>)
     doSomething(something.get()); // We can extract the raw pointer from our unique pointer using `get()`, so we can still use the `doSomething` function
@@ -168,7 +171,7 @@ Note that if the call to `doSomething(something.get())` aborts with an exception
 Unique pointers will automatically delete the object that they point to as soon as they go out of scope. For this reason, different unique pointers cannot address the same object, since they will all attempt to delete that same object when they go out of scope. To avoid this issue, use shared pointers. An object can be addressed by many shared pointers, and will only be deleted once all of those shared pointers have been deleted or have gone out of scope.
 
 Example:
-```
+```cpp
 void func() {
     std::shared_ptr<SomeClass> ptr1 = std::make_shared<SomeClass>();
     std::shared_ptr<SomeClass> ptr2 = ptr1;
@@ -182,7 +185,7 @@ Note that we have two pointers to the same object, but the object is not deleted
 
 Suppose you have objects which have pointers to each other. Specifically, suppose you have objects `a` and `b`, and that each of them have a pointer attribute called `ptr`. Then the following function would cause a circular reference:
 
-```
+```cpp
 a->ptr = b;
 b->ptr = a;
 ```
