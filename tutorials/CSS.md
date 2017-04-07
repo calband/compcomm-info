@@ -60,7 +60,7 @@ The difference between margin and padding is sometimes semantics, but it can mak
 A good question to ask is, if you changed the background of the selected element to be bright red, do you want that red background touching neighboring elements? If not, add margin. Additionally, do you want the text to touch the edge of the red background? If not, add padding.
 
 ![margin diagram](css-margin.jpg)
-![padding diagram](css-padding.jpg)
+![padding diagram](css-padding.png)
 
 These CSS values can also be specified in multiple ways (same for padding):
 
